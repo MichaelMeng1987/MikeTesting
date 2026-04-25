@@ -1,15 +1,32 @@
-# Hello World Python Project
+# Excel Compare Python Project
 
-A simple Python project that prints "Hello World".
+A small Python utility for comparing two `.xlsx` workbooks and generating a diff report workbook.
+
+## Installation
+
+Install the required dependency:
+
+```bash
+python -m pip install -r requirements.txt
+```
 
 ## Usage
 
-Run the script:
+Compare two Excel files and generate a diff workbook:
 
 ```bash
-python hello.py
+python compare_excels.py left.xlsx right.xlsx --output-file diff.xlsx
 ```
 
-## Skills Folder
+The generated `diff.xlsx` workbook includes:
+
+- `SUMMARY`: sheet-by-sheet status and difference counts
+- `Diff: <SheetName>`: changed cells and values for each compared sheet
+
+## Notes
+
+- Supports `.xlsx` files only
+- Compares each sheet cell-by-cell
+- Missing sheets are reported in the output workbook
 
 The `skills` folder is reserved for adding custom skills later.
